@@ -1,0 +1,258 @@
+/* PrismJS 1.14.0
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+dart */
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+:root {
+	--background: #282C34;
+	--color: #2C323B;
+	--color: #3E4451;
+	--color: #4B5363;
+	--color: #64B6C3;
+	--color: #6CAFF2;
+	--color: #98C379;
+	--color: #d0d0d0;
+	--color: #f92672;
+	--color: red;
+	--color: rgba(73, 72, 62, 0.99);
+	--color: white;
+	--comment: #667689;
+	--function-def: #DFC07B;
+	--keyword: #D86C74;
+	--number: #D19A66;
+	--operator: #C678DD;
+	--punctuation: #ABB2BF;
+	--tag: #D86C74;
+	--variable: #98C379;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+	border: 3px solid var(--operator);
+	color: #ccc;
+	background: none;
+	font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1.5rem !important;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+	max-height: 500px;
+	overflow: scroll;
+	padding: 0 20px !important;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: var(--background);
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: var(--comment);
+}
+
+.token.punctuation {
+	color: var(--punctuation);
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+	color: var(--tag);
+}
+
+.token.function-name {
+	color: var(--function-def);
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+	color: var(--number);
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+	color: var(--function-def);
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+	color: var(--keyword);
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+	color: var(--variable);
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+	color: var(--operator);
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.token.inserted {
+	color: green;
+}
+
+/* CodeMirror {
+  background: #282C34;
+  color: #ABB2BF;
+}
+
+div.CodeMirror-selected {
+  background: #3E4451;
+}
+
+.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection {
+  background: rgba(73, 72, 62, 0.99);
+}
+
+.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection {
+  background: rgba(73, 72, 62, 0.99);
+}
+
+.CodeMirror-gutters {
+  background: #282C34;
+  border-right: 1px solid #282C34;
+}
+
+.CodeMirror-guttermarker {
+  color: white;
+}
+
+.CodeMirror-guttermarker-subtle {
+  color: #d0d0d0;
+}
+
+.CodeMirror-linenumber {
+  color: #4B5363;
+}
+
+.CodeMirror-cursor {
+  border-left: 1px solid #528BFF;
+}
+
+span.cm-comment {
+  color: #667689;
+}
+
+span.cm-atom {
+  color: #64B6C3;
+}
+
+span.cm-number {
+  color: #D19A66;
+}
+
+span.cm-property, span.cm-attribute {
+  color: #ABB2BF;
+}
+
+span.cm-keyword {
+  color: #D86C74;
+}
+
+span.cm-string {
+  color: #98C379;
+}
+
+span.cm-variable {
+  color: #ABB2BF;
+}
+
+span.cm-variable-2 {
+  color: #C678DD;
+}
+
+span.cm-variable-3 {
+  color: #64B6C3;
+}
+
+span.cm-def {
+  color: #6CAFF2;
+}
+
+span.cm-bracket {
+  color: #ABB2BF;
+}
+
+span.cm-tag {
+  color: #D86C74;
+}
+
+span.cm-header {
+  color: #ABB2BF;
+}
+
+span.cm-link {
+  color: #98C379;
+}
+
+span.cm-error {
+  background: #f92672;
+  color: red;
+}
+
+.CodeMirror-activeline-background {
+  background: #2C323B;
+}
+
+.CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: #ABB2BF !important;
+} */

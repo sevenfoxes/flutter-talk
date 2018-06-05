@@ -1,5 +1,4 @@
 import styled from 'react-emotion';
-import CodeSlide  from 'spectacle-code-slide';
 
 import {
   ListItem as Li,

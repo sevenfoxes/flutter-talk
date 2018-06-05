@@ -1,7 +1,6 @@
 /* eslint import/no-webpack-loader-syntax: off */
 // Import React
 import React from 'react';
-import CodeSlide from 'spectacle-code-slide';
 
 // Import Spectacle Core tags
 import {
@@ -13,6 +12,7 @@ import {
   Slide,
   Text,
   Notes,
+  CodePane,
 } from 'spectacle';
 
 import {
@@ -25,9 +25,13 @@ import {
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
 
+CodePane.defaultProps = {
+  theme: 'external',
+  lineNumbers: true
+}
+
 // Require CSS
 require('normalize.css');
-require('./prisim.css');
 
 
 const theme = createTheme(
@@ -144,16 +148,28 @@ export default class Presentation extends React.Component {
             </p>
           </Notes>
         </Slide>
-        <CodeSlide
+        <Slide transition={[]} bgColor="codeBackground">
+          <Heading size={5} textColor="primary" caps>
+            Unit Tests
+          </Heading>
+          <p></p>
+
+          <CodePane source={require("./unit_test.dart.js").default} lang="js" />
+        </Slide>
+        <Slide
           transition={[]}
-          code={require("./unit_test.dart.js").default}
-          bgColor="codeBackground"
-          lang="js"
-          ranges={[
-            { loc: [0, 8] },
-            { loc: [11, 51] },
-            { loc: [53, 113] }
-          ]} />
+          bgColor="codeBackground">
+          <Heading size={5} textColor="primary" caps>
+            Widget Tests
+          </Heading>
+          <p></p>
+          <CodePane source={require("./widget_test.dart.js").default} lang="js" />
+        </Slide>
+        <Slide
+          transition={[]}
+          bgColor="codeBackground">
+          <CodePane source={require("./integration_test.dart.js").default} lang="js" />
+        </Slide>
         <RainbowSlide>
           <Slide transition={['slide']} bgColor="transparent">
             <Heading size={6} textColor="primary" caps>
