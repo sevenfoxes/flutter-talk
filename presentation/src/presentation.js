@@ -8,27 +8,22 @@ import {
   Cite,
   Deck,
   Heading,
-  Quote,
   Slide,
   Text,
   Notes,
-  CodePane,
 } from 'spectacle';
 
 import {
+  CodePane,
   Grid,
   List,
   ListItem,
+  Quote,
   RainbowSlide,
 } from './customComponents'
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
-
-CodePane.defaultProps = {
-  theme: 'external',
-  lineNumbers: true
-}
 
 // Require CSS
 require('normalize.css');
@@ -168,6 +163,10 @@ export default class Presentation extends React.Component {
         <Slide
           transition={[]}
           bgColor="codeBackground">
+          <Heading size={5} textColor="primary" caps>
+            Integration Tests
+          </Heading>
+          <p></p>
           <CodePane source={require("./integration_test.dart.js").default} lang="js" />
         </Slide>
         <RainbowSlide>
@@ -207,13 +206,15 @@ export default class Presentation extends React.Component {
             </p>
             <p>
             Google is also developing a new operating system codename Fushia based around flutter. and this year they had 6 google.io sessions for flutter.
+            </p><p>
+            Not the sort of thing you'd expect from a dead language.
             </p>
           </Notes>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
+            <Quote textSize="40px">Flutter is the only mobile SDK that provides reactive views without requiring a JavaScript bridge should be enough to make Flutter interesting and worth trying</Quote>
+            <Cite>Wm Leler - Senior Software Engineer at Google</Cite>
           </BlockQuote>
         </Slide>
       </Deck>

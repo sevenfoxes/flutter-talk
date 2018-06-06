@@ -1,12 +1,30 @@
 import styled from 'react-emotion';
 
 import {
+  CodePane as Cp,
   ListItem as Li,
   List as U,
+  Quote as Q,
 } from 'spectacle';
+
+Cp.defaultProps = {
+  theme: 'external',
+  lineNumbers: true
+}
+
+export const CodePane = styled(Cp) `
+  font-family: "Fira Code" !important;
+`
 
 export const List = styled(U) `
 
+`;
+
+export const Quote = styled(Q) `
+  font-size: 3rem;
+  font-weight: normal;
+  font-style: italic;
+  line-height: 1.3;
 `;
 
 export const ListItem = styled(Li) `
