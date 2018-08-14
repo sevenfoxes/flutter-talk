@@ -26,7 +26,7 @@ class MyHomePage extends StatelessWidget {
       title: new Container(
         decoration: new BoxDecoration(
           border: new Border.all(color: const Color(0x80000000)),
-          borderRadius: new BorderRadius.circular(5.0)
+          borderRadius: new BorderRadius.circular(5.0),
         ),
         padding: const EdgeInsets.all(10.0),
         child: new Row(
@@ -36,16 +36,16 @@ class MyHomePage extends StatelessWidget {
             ),
             new Text(
               document['votes'].toString(),
-            )
+            ),
           ],
         ),
       ),
       onTap: () => Firestore.instance.runTransaction((transaction) async {
-        DocumentSnapshot freshSnap =
-          await transaction.get(document.reference);
-        await transaction.update(
-          freshSnap.reference, {'votes': freshSnap['votes'] + 1});
-      }),
+            DocumentSnapshot freshSnap =
+                await transaction.get(document.reference);
+            await transaction
+                .update(freshSnap.reference, {'votes': freshSnap['votes'] + 1});
+          }),
     );
   }
 
@@ -58,12 +58,11 @@ class MyHomePage extends StatelessWidget {
           builder: (context, snapshot) {
             if (!snapshot.hasData) return const Text('Loading...');
             return new ListView.builder(
-              itemCount: snapshot.data.documents.length,
-              padding: const EdgeInsets.only(top: 10.0),
-              itemExtent: 55.0,
-              itemBuilder: (context, index) =>
-                _buildListItem(context, snapshot.data.documents[index])
-            );
+                itemCount: snapshot.data.documents.length,
+                padding: const EdgeInsets.only(top: 10.0),
+                itemExtent: 55.0,
+                itemBuilder: (context, index) =>
+                    _buildListItem(context, snapshot.data.documents[index]));
           }),
     );
   }
