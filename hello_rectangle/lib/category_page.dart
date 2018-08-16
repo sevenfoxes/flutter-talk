@@ -29,6 +29,17 @@ class CategoryRoute extends StatelessWidget {
     Colors.red,
   ];
 
+  static const _icons = <IconData>[
+    Icons.linear_scale,
+    Icons.launch,
+    Icons.local_drink,
+    Icons.arrow_drop_down_circle,
+    Icons.access_time,
+    Icons.sd_card,
+    Icons.battery_charging_full,
+    Icons.attach_money,
+  ];
+
   Widget _buildCategoryWidgets(List<Widget> categories) {
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) => categories[index],
@@ -54,7 +65,7 @@ class CategoryRoute extends StatelessWidget {
       categories.add(Category(
         name: _categoryNames[i],
         color: _baseColors[i],
-        icon: Icons.cake,
+        icon: _icons[i],
         units: _retrieveUnitList(_categoryNames[i]),
       ));
     }
