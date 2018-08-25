@@ -1,0 +1,39 @@
+.rainbow {
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+  background-size: 1800%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.clipped {
+  background-image: url("/materialbg.gif");
+  background-position: center -80px;
+  background-repeat: no-repeat;
+  zoom: 1.8;
+  /* clip-path: inset(12% 32% 12% 32%); */
+  width: 266px;
+  height: 420px;
+  margin: 1rem auto;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: -1;
+}
+
+.shade {
+  /* background: rgba(255, 255, 255, .7); */
+  /* margin: .5rem 0 !important; */
+  /* padding-left: 200px !important;
+  padding-right: 200px !important; */
+  /* z-index: 999; */
+}
+.shade > *:after,
+.shade > *:before {
+ /* content: ' '; */
+ /* white-space: pre; */
+ /* line-height: 1.3; */
+}

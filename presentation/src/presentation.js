@@ -19,8 +19,10 @@ import {
   List,
   ListItem,
   Quote,
-  RainbowSlide,
+  RainbowSlide
 } from './customComponents'
+
+// import * as RainbowSlide from './rainbowSlide'
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
@@ -37,6 +39,7 @@ const theme = createTheme(
     quartenary: '#CECECE',
     dramadary: '#16c2e2',
     codeBackground: '#282C34',
+    rainbow: 'linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3)'
   },
   {
     primary: 'Montserrat',
@@ -65,10 +68,10 @@ export default class Presentation extends React.Component {
           </Text>
           <Notes>
             <p>
-              Hi, today I'll be showing you why I think flutter is a better choice for developing iOS/Android apps natively than a javascript framework, or even the device's native language.
+              Hi, today I'll be showing you why I think flutter is a better choice for developing iOS/Android apps than a javascript framework, or even the device's native language.
             </p>
             <p>
-              I first heard about flutter at strangeloop and a couple things stood out to me, but I wasn't sold on it. The more I study it, the more exciting it looks and I think it could become the dominant force in multiplatform devleopment.
+              I first heard about flutter at strangeloop and a couple things stood out to me, especially its headline features that we'll cover in a second, but I wasn't sold on it, mainly because I have never done native development before. I have been wanting to branch out from being primarily a javascript developer so, rather than doing the obvious and learning react native, I started learning flutter. I've been looking at and building the example apps for awhile now and I think it could become a dominant force in multiplatform devleopment.
             </p>
           </Notes>
         </Slide>
@@ -81,10 +84,10 @@ export default class Presentation extends React.Component {
           </Text>
           <Notes>
             <p>
-              Flutter is a dart framework for developing apps on iOS and Android. It is rapidly moving towards a release candidate and is already on its third beta. Google says it's now ready for production.
+              Flutter is a dart framework for developing apps on iOS and Android. It's currently beta but has seen a significant amount of progress in devleopment and Google says it's now ready for production.
             </p>
             <p>
-              Its goal is to give developers a way to build great apps, fast. How does it do that? Let's look at some of its marquee features...
+              Its goal is to give developers a way to build great reactive apps, quickly. How does it do that? Let's look its big features...
             </p>
           </Notes>
         </Slide>
@@ -98,7 +101,7 @@ export default class Presentation extends React.Component {
           <img alt="showing hot reloading" src="hot-reload.gif" />
           <Notes>
             <p>
-              With zero configuration (outside installing the framework) you will be hot reloading on both iPhone and Android devices. The reloading is fast too, under 500ms typically.
+              With zero configuration (outside installing the framework, an editor and a plugin) you will be hot reloading on both iPhone and Android devices. Reloads are fast too, often under 500ms.
             </p>
           </Notes>
         </Slide>
@@ -106,13 +109,13 @@ export default class Presentation extends React.Component {
           <Grid>
             <div className="col">
               <Heading size={6} textColor="primary" textAlign="left" caps>
-              Features
+                Features
               </Heading>
               <Text textColor="secondary" textAlign="left">
-              Expressive and Flexible UI
+                Expressive and Flexible UI
               </Text>
               <List textAlign="left">
-                <ListItem>Native look and feel</ListItem>
+                <ListItem>material look and feel*</ListItem>
                 <ListItem>Material widget library included</ListItem>
                 <ListItem>Straightforward customization</ListItem>
               </List>
@@ -123,10 +126,10 @@ export default class Presentation extends React.Component {
           </Grid>
           <Notes>
             <p>
-              Making apps that look good is pretty straightforward too. Flutter comes with a standard set of material widgets that you can change to suit your needs.
+              What good is super fast reloading if there's nothing to reload? Flutter comes with a standard set of material widgets that you can customzie to suit your needs. These work a lot like writing a custom react Component.
             </p>
             <p>
-              They also adapt to working on iOS or Android naturally. No need to write custom widgets for each platform.
+              Flutter's material components also adapt to working on iOS or Android automatically. You have one codebase that targets both platforms.
             </p>
           </Notes>
         </Slide>
@@ -139,7 +142,7 @@ export default class Presentation extends React.Component {
           </Text>
           <Notes>
             <p>
-              Flutter's prioritization of testing should be of particular interest to us at Asynchrony. It comes ready to be tested with a testing library included!
+              Flutter prioritizes TDD. Setting up a new project also sets up a testing workflow with no extra effort. Flutter's tests are broken down into three types:
             </p>
           </Notes>
         </Slide>
@@ -148,7 +151,6 @@ export default class Presentation extends React.Component {
             Unit Tests
           </Heading>
           <p></p>
-
           <CodePane source={require("./unit_test.dart.js").default} lang="js" />
         </Slide>
         <Slide
@@ -169,8 +171,8 @@ export default class Presentation extends React.Component {
           <p></p>
           <CodePane source={require("./integration_test.dart.js").default} lang="js" />
         </Slide>
-        <RainbowSlide>
-          <Slide transition={['slide']} bgColor="transparent">
+        <RainbowSlide transition={['slide']}>
+          <div>
             <Heading size={6} textColor="primary" caps>
               FEATURES
             </Heading>
@@ -181,18 +183,18 @@ export default class Presentation extends React.Component {
               performance
             </Heading>
             <Text textColor="secondary" fit caps>
-             frame rates as high as 120FPS!
+              frame rates as high as 120FPS!
             </Text>
-            <Notes>
-              <p>
-                thanks to reasons we'll cover in a bit, the performance of a flutter app scales with device specs and if your device supports 120Hz refresh rate, flutter runs at 120FPS!
-              </p>
-            </Notes>
-          </Slide>
+          </div>
+          <Notes>
+            <p>
+              thanks to reasons we'll cover in a bit, the performance of a flutter app scales with device specs and if your device supports 120Hz refresh rate, flutter runs at 120FPS! It is as fast as any native app, runs on both iOS and Android from a single codebase, and has an AWESOME development environment. There's a few things that I'd like to cover before jumping into the app that get brought up a LOT when talking about flutter
+            </p>
+          </Notes>
         </RainbowSlide>
         <Slide transition={['slide']} bgColor="primary">
           <p>
-        <img alt="I'm not dead" src="notdead.gif" />
+            <img alt="I'm not dead" src="notdead.gif" />
           </p>
           <Heading size={6} textColor="secondary" fit>
             Wait, isn't dart a dead language?
@@ -202,20 +204,113 @@ export default class Presentation extends React.Component {
           </Text>
           <Notes>
             <p>
-            If you do any Googling about flutter or Dart, you're going to come across someone saying "Dart is dead". Dart is most certainly NOT dead. Google uses Dart and flutter extensively and Dart in particular, due to its use on adwords, represents a sizeable amount of internal development.
+              If you do any Googling about flutter or Dart, you're going to come across someone saying "Dart is dead".  Literally, google dart is dead and the first result is about how dart is dead. However, Dart is most certainly NOT dead. Google uses Dart and flutter extensively and Dart in particular. Due to its use on adwords, dart represents a sizeable amount of internal development codebase at Google.
             </p>
             <p>
-            Google is also developing a new operating system codename Fushia based around flutter. and this year they had 6 google.io sessions for flutter.
+              In addition to Adwords, Google is also developing a new operating system, codename Fushia based around flutter and Dart. They also had 6 google.io sessions for flutter this year.
             </p><p>
-            Not the sort of thing you'd expect from a dead language.
+              Not the sort of thing you'd expect from a dead language.
+            </p>
+          </Notes>
+        </Slide>
+        <Slide transition={['slide']} bgColor="#673fb2">
+          <div className="clipped"></div>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <Heading className="shade" size={6} textColor="primary" fit>
+            Flutter's visual design
+          </Heading>
+          <Text className="shade" textColor="primary" fit>
+            It doesn't look like a "native" app
+          </Text>
+          <Text className="shade" textColor="primary" fit>
+            and it's not supposed to
+          </Text>
+          <Notes>
+            <p>
+              Earlier I put an asterisk next to material look and feel. And that's because the app doesn't visually appear different from platform to platform by default. Google chose, intentionally to make their widgets conform to their own material standards as opposed to making them fit both Apple's design guideline, and their own.
+            </p>
+            <p>
+              I believe that google is encouraging people to build interfaces that are cohesive between platforms. Whether that's just using google's material, something completely custom or something in-between.
+            </p>
+          </Notes>
+        </Slide>
+        <Slide transition={['slide']} bgColor="tertiary">
+          <Heading size={1} textColor="primary" caps>
+            But why's it fast tho?
+          </Heading>
+          <Notes>
+            <p>
+              Now that we've covered some of the most common questions about Flutter, let's
+              Let's talk about WHY flutter is fast.
             </p>
           </Notes>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <BlockQuote>
-            <Quote textSize="40px">Flutter is the only mobile SDK that provides reactive views without requiring a JavaScript bridge should be enough to make Flutter interesting and worth trying</Quote>
+            <Quote textSize="40px">Flutter is the only mobile SDK that provides reactive views without requiring a JavaScript bridge. That should be enough to make Flutter interesting and worth trying</Quote>
             <Cite>Wm Leler - Senior Software Engineer at Google</Cite>
           </BlockQuote>
+          <Notes>
+            <p>
+              This quote from Wm Leler sums it up pretty nicely...
+            </p>
+          </Notes>
+        </Slide>
+        <Slide transition={['slide']} bgColor="tertiary">
+          <Heading size={1} textColor="primary" caps>
+            But why's it fast tho?
+          </Heading>
+          <Notes>
+            <p>
+              Alright, fine, I'll show you some illustrations as well.
+            </p>
+          </Notes>
+        </Slide>
+        <Slide transition={['slide']} bgColor="primary">
+          <Heading size={6} textColor="tertiary" caps>
+            OEM SDKs
+          </Heading>
+          <p>
+            <img alt="OEM SDK" src="oemsdk.png" />
+          </p>
+          <Notes>
+            <p>
+              Here we have the architecture of a native SDK. It's pretty Straightforward, your app, written in the native language of the device, talks to OEM widgets and APIs
+            </p>
+          </Notes>
+        </Slide>
+        <Slide transition={['slide']} bgColor="primary">
+          <Heading size={6} textColor="tertiary" caps>
+            Reactive Views
+          </Heading>
+          <p>
+            <img alt="Reactive views architecture diagram" src="reactiveviews.png" />
+          </p>
+          <Notes>
+            <p>
+              This is an example of a reactive application architecture, such as you get from React Native. You're application is actually excecuted across a bridge that alows your javascript to interact with OEM widgets. This Javascript bridge is slow. Each side of the bridge is fast, but this bridge is a bottleneck, so you need to write your app to minimize trips over the bridge.
+            </p>
+          </Notes>
+        </Slide>
+        <Slide transition={['slide']} bgColor="primary">
+          <Heading size={6} textColor="tertiary" caps>
+            Flutter's Architechture
+          </Heading>
+          <p>
+            <img alt="Reactive views architecture diagram" src="flutterarch.png" />
+          </p>
+          <Notes>
+            <p>
+              Lastly we have Flutter and you can see that things are a bit different. First, you'll notice that dart isn't in this picture. Your code is AOT compiled to native. This completely removes the need for any sort of bridge. More than that, It doesn't access OEM widgets or webviews for that matter, instead provides its own and renders straight to canvas.
+            </p>
+          </Notes>
         </Slide>
       </Deck>
     );
