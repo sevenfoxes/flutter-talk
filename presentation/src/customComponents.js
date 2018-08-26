@@ -59,7 +59,7 @@ export const RainbowSlide = styled(Slide)`
   left: 0;
   scale: 1;
   zoom: 0;
-  padding: 10%;
+  padding: 0 10%;
   animation: rainbow 20s linear infinite;
 
   > * {

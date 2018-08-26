@@ -1,3 +1,4 @@
+export default `
 /* eslint import/no-webpack-loader-syntax: off */
 // Import React
 import React from 'react';
@@ -68,7 +69,7 @@ export default class Presentation extends React.Component {
           </Text>
           <Notes>
             <p>
-              Hi, today I'll be showing you why I think flutter is a better choice for developing iOS/Android apps than a javascript framework, or even in some cases, the device's native language.
+              Hi, today I'll be showing you why I think flutter is a better choice for developing iOS/Android apps than a javascript framework, or even the device's native language.
             </p>
             <p>
               I first heard about flutter at strangeloop and a couple things stood out to me, especially its headline features that we'll cover in a second, but I wasn't sold on it, mainly because I have never done native development before. I have been wanting to branch out from being primarily a javascript developer so, rather than doing the obvious and learning react native, I started learning flutter. I've been looking at and building the example apps for awhile now and I think it could become a dominant force in multiplatform devleopment.
@@ -84,10 +85,10 @@ export default class Presentation extends React.Component {
           </Text>
           <Notes>
             <p>
-              Flutter is a dart framework for developing apps on iOS and Android. It's currently beta but has seen a significant amount of progress in devleopment and Google says it's ready for production.
+              Flutter is a dart framework for developing apps on iOS and Android. It's currently beta but has seen a significant amount of progress in devleopment and Google says it's now ready for production.
             </p>
             <p>
-              Its goal is to give developers a way to build great reactive apps, quickly. How does it do that? Let's have a look at some of its biggest features...
+              Its goal is to give developers a way to build great reactive apps, quickly. How does it do that? Let's look its big features...
             </p>
           </Notes>
         </Slide>
@@ -101,10 +102,7 @@ export default class Presentation extends React.Component {
           <img alt="showing hot reloading" src="hot-reload.gif" />
           <Notes>
             <p>
-              With zero configuration (outside installing the framework, an editor, and a plugin) you will be hot reloading on both iPhone and Android devices. Reloads are fast too, often under 500ms.
-            </p>
-            <p>
-              React Native can do this as well, but there are cases where react native cannot be hot reloaded. Flutter seems to be able to hot reload from pretty much any state short of a package installation.
+              With zero configuration (outside installing the framework, an editor and a plugin) you will be hot reloading on both iPhone and Android devices. Reloads are fast too, often under 500ms.
             </p>
           </Notes>
         </Slide>
@@ -129,10 +127,10 @@ export default class Presentation extends React.Component {
           </Grid>
           <Notes>
             <p>
-              What good is super fast reloading if there's nothing to reload? Flutter comes with a standard set of material widgets that you can customzie to suit your needs. These work a lot like writing custom react Components, discrete trees of code.
+              What good is super fast reloading if there's nothing to reload? Flutter comes with a standard set of material widgets that you can customzie to suit your needs. These work a lot like writing a custom react Component.
             </p>
             <p>
-              Flutter's material components also adapt, KIND of... to working on iOS or Android automatically, but it maintains that material look across Android and iOS. The upside is, You get one codebase that targets both platforms.
+              Flutter's material components also adapt to working on iOS or Android automatically. You have one codebase that targets both platforms.
             </p>
           </Notes>
         </Slide>
@@ -155,11 +153,6 @@ export default class Presentation extends React.Component {
           </Heading>
           <p></p>
           <CodePane source={require("./code_samples/unit_test.dart.js").default} lang="js" />
-          <Notes>
-            <p>
-              No surprises here.
-            </p>
-          </Notes>
         </Slide>
         <Slide
           transition={[]}
@@ -169,11 +162,6 @@ export default class Presentation extends React.Component {
           </Heading>
           <p></p>
           <CodePane source={require("./code_samples/widget_test.dart.js").default} lang="js" />
-          <Notes>
-            <p>
-              A widget test is essentially an integration test, for a widget, in isolation.
-            </p>
-          </Notes>
         </Slide>
         <Slide
           transition={[]}
@@ -183,11 +171,6 @@ export default class Presentation extends React.Component {
           </Heading>
           <p></p>
           <CodePane source={require("./code_samples/integration_test.dart.js").default} lang="js" />
-          <Notes>
-            <p>
-              And of course you have integration tests to test user interaction across your app
-            </p>
-          </Notes>
         </Slide>
         <RainbowSlide transition={['slide']}>
           <div>
@@ -206,7 +189,7 @@ export default class Presentation extends React.Component {
           </div>
           <Notes>
             <p>
-              thanks to reasons we'll cover in a bit, the performance of a flutter app scales with device specs and if your device supports 120Hz refresh rate, flutter runs at 120FPS! It is as fast as any native app, runs on both iOS and Android from a single codebase, and has an AWESOME development environment. There's a few things that I'd like to cover before jumping into the coding demos that get brought up a LOT when talking about flutter
+              thanks to reasons we'll cover in a bit, the performance of a flutter app scales with device specs and if your device supports 120Hz refresh rate, flutter runs at 120FPS! It is as fast as any native app, runs on both iOS and Android from a single codebase, and has an AWESOME development environment. There's a few things that I'd like to cover before jumping into the app that get brought up a LOT when talking about flutter
             </p>
           </Notes>
         </RainbowSlide>
@@ -222,7 +205,7 @@ export default class Presentation extends React.Component {
           </Text>
           <Notes>
             <p>
-              If you do any Googling about flutter or Dart, you're going to come across someone saying "Dart is dead". Literally, one of the first first articles you may have come across is titled "<a href="https://medium.com/@richardeng/dart-is-dead-aedced9fd3d1">dart is dead</a>". However, Google uses Dart and flutter extensively, Dart in particular, Due to its use on adwords. Dart code actually represents a sizeable amount of internal development at Google.
+              If you do any Googling about flutter or Dart, you're going to come across someone saying "Dart is dead".  Literally, google dart is dead and the first result is about how dart is dead. However, Dart is most certainly NOT dead. Google uses Dart and flutter extensively and Dart in particular. Due to its use on adwords, dart represents a sizeable amount of internal development codebase at Google.
             </p>
             <p>
               In addition to Adwords, Google is also developing a new operating system, codename Fushia based around flutter and Dart. They also had 6 google.io sessions for flutter this year.
@@ -251,10 +234,10 @@ export default class Presentation extends React.Component {
           </Text>
           <Notes>
             <p>
-              Earlier I put an asterisk next to material look and feel. I also mentioned that regardless of platform, the app doesn't visually appear different by default. Google chose, I feel, intentionally to make their widgets conform to their own material standards, for simplicity. As opposed to making them fit both and their own.
+              Earlier I put an asterisk next to material look and feel. And that's because the app doesn't visually appear different from platform to platform by default. Google chose, intentionally to make their widgets conform to their own material standards as opposed to making them fit both Apple's design guideline, and their own.
             </p>
             <p>
-              I believe that google is encouraging people to build interfaces that are cohesive between platforms with their own design language, NOT Google's. Material is simply the starting point.
+              I believe that google is encouraging people to build interfaces that are cohesive between platforms. Whether that's just using google's material, something completely custom or something in-between.
             </p>
           </Notes>
         </Slide>
@@ -266,7 +249,7 @@ export default class Presentation extends React.Component {
           <CodePane source={require("./code_samples/big_tree.dart.js").default} lang="js" />
           <Notes>
             <p>
-              One last complaint I'd like to look at is Flutter's widget tree. I took issue with this myself when I first saw it. It doesn't look particularly intuitive. especially In this example, it's not easy to tell what things do, it's not very dry. Why is it like this?
+              One last complaint I'd like to look at is Flutter's widget tree. I took issue with this myself when I first saw it. It doesn't look particularly intuitive. especially In this example, it's not particularly easy to tell what things do, it's certainly not very dry. Why is it like this?
             </p>
           </Notes>
         </Slide>
@@ -278,7 +261,7 @@ export default class Presentation extends React.Component {
           <CodePane source={require("./code_samples/html_tree.html.js").default} lang="html" />
           <Notes>
             <p>
-              Oh, that's interesting. When you look at it this way, it's sort of like HTML. But HTML isn't code. it's pretty static. Which is not what you want in your app, This is where flutter's "interface as code" let's us get around writing this big tree. Since it's just classes, you can factor them out into logical pieces or simply put them in different files. But technically, there's still a tree...
+              Oh, that's interesting. When you look at it this way, it's sort of like HTML. But HTML isn't code. it's pretty static. This is where flutter's "interface as code" let's us get around writing a big tree. Since it's just classes, you can factor them out into logical pieces or simply put them in different files. Technically, there's still a tree...
             </p>
           </Notes>
         </Slide>
@@ -301,7 +284,7 @@ export default class Presentation extends React.Component {
           <Notes>
             <p>
               Now that we've covered some of the most common questions about Flutter, let's
-              Let's talk about WHY flutter is fast. Since that's the thing that really gets those medium clicks.
+              Let's talk about WHY flutter is fast.
             </p>
           </Notes>
         </Slide>
@@ -363,27 +346,11 @@ export default class Presentation extends React.Component {
             <p>
               Lastly we have Flutter and you can see that things are a bit different. First, you'll notice that dart isn't in this picture. Your code is AOT compiled to native. This completely removes the need for any sort of bridge. More than that, It doesn't access OEM widgets or webviews for that matter, instead provides its own and renders straight to canvas.
             </p>
-            <p>
-              This illustration shows what makes it fast, there's no bridge, and why it has opted to provide its own design language. Because it needs to bring its own components with it to fully provide its speed advantage.
-            </p>
-          </Notes>
-        </Slide>
-        <Slide transition={['slide']} bgColor="tertiary">
-          <Heading size={1} textColor="primary" caps>
-            demo time
-          </Heading>
-          <Notes>
-            <ul>
-              <li>Show setting up</li>
-              <li>Show a couple hot reloads</li>
-              <li>Show the hello_rectangle app</li>
-              <li>Explain main</li>
-              <li>Explain how pages are structured and "routing"</li>
-              <li>Explain show widget breakup</li>
-            </ul>
           </Notes>
         </Slide>
       </Deck>
     );
   }
 }
+
+`;

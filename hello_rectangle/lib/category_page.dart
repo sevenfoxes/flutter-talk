@@ -86,7 +86,7 @@ class CategoryRoute extends StatelessWidget {
         ),
       ),
       centerTitle: true,
-      backgroundColor: _backgroundColor,
+      backgroundColor: Colors.green[400],
     );
 
     return Scaffold(
