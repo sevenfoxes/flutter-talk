@@ -25,10 +25,10 @@ class MyHomePage extends StatelessWidget {
       key: new ValueKey(document.documentID),
       title: new Container(
         decoration: new BoxDecoration(
-          border: new Border.all(color: const Color(0x80000000)),
-          borderRadius: new BorderRadius.circular(5.0),
-        ),
-        padding: const EdgeInsets.all(10.0),
+            border: new Border.all(color: Colors.blue, width: 2.0),
+            borderRadius: new BorderRadius.circular(25.0),
+            color: Colors.green[100]),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
         child: new Row(
           children: <Widget>[
             new Expanded(
@@ -59,7 +59,7 @@ class MyHomePage extends StatelessWidget {
             if (!snapshot.hasData) return const Text('Loading...');
             return new ListView.builder(
                 itemCount: snapshot.data.documents.length,
-                padding: const EdgeInsets.only(top: 10.0),
+                padding: const EdgeInsets.only(top: 20.0),
                 itemExtent: 55.0,
                 itemBuilder: (context, index) =>
                     _buildListItem(context, snapshot.data.documents[index]));

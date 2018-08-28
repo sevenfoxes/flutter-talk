@@ -71,7 +71,7 @@ export default class Presentation extends React.Component {
               Hi, today I'll be showing you why I think flutter is a better choice for developing iOS/Android apps than a javascript framework, or even in some cases, the device's native language.
             </p>
             <p>
-              I first heard about flutter at strangeloop and a couple things stood out to me, especially its headline features that we'll cover in a second, but I wasn't sold on it, mainly because I have never done native development before. I have been wanting to branch out from being primarily a javascript developer so, rather than doing the obvious and learning react native, I started learning flutter. I've been looking at and building the example apps for awhile now and I think it could become a dominant force in multiplatform devleopment.
+              I first heard about flutter at strangeloop and a couple things stood out to me, especially its headline features that we'll cover in a second, but I wasn't sold on it, mainly because I have never done native development before. I have been wanting to branch out from being exclusively a javascript developer so, rather than doing the obvious and learning react native, I started learning flutter. I've been looking at and building the example apps for awhile now and I think it could become a dominant force in multiplatform devleopment.
             </p>
           </Notes>
         </Slide>
@@ -101,7 +101,7 @@ export default class Presentation extends React.Component {
           <img alt="showing hot reloading" src="hot-reload.gif" />
           <Notes>
             <p>
-              With zero configuration (outside installing the framework, an editor, and a plugin) you will be hot reloading on both iPhone and Android devices. Reloads are fast too, often under 500ms.
+              With zero configuration (outside installing the framework, an editor, and a plugin) you will be able to hot reload on both iPhone and Android devices. Reloads are fast too, often under 500ms.
             </p>
             <p>
               React Native can do this as well, but there are cases where react native cannot be hot reloaded. Flutter seems to be able to hot reload from pretty much any state short of a package installation.
